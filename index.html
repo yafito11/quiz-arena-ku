@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Quiz Arena</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark': '#1a202c',
+            'brand-primary': '#4f46e5',
+            'brand-secondary': '#10b981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
+            'star-pattern': "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            'mountain-pattern': "linear-gradient(to top, #4a5568, #a0aec0, #e2e8f0)",
+          },
+          backgroundSize: {
+            'grid-pattern': '2rem 2rem',
+            'star-pattern': '50px 50px',
+          },
+           animation: {
+            'slide-in-up': 'slide-in-up 0.5s ease-out forwards',
+            'fade-in': 'fade-in 0.5s ease-out forwards',
+            'pulse-highlight': 'pulse-highlight 1.5s ease-in-out',
+            'fade-out-up': 'fade-out-up 1.5s ease-out forwards',
+           },
+           keyframes: {
+             'slide-in-up': {
+               'from': { transform: 'translateY(20px)', opacity: '0' },
+               'to': { transform: 'translateY(0)', opacity: '1' },
+             },
+             'fade-in': {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+             },
+             'pulse-highlight': {
+                '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(76, 201, 240, 0)' },
+                '50%': { transform: 'scale(1.02)', boxShadow: '0 0 15px 5px rgba(76, 201, 240, 0.4)' },
+             },
+             'fade-out-up': {
+                'from': { opacity: '1', transform: 'translateY(0)' },
+                'to': { opacity: '0', transform: 'translateY(-20px)' },
+             }
+           }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark">
+  <div id="root"></div>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.1.1",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+        "react/": "https://aistudiocdn.com/react@^19.1.1/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+      }
+    }
+  </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

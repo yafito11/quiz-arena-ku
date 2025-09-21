@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Gemini Quiz Arena",
+  "description": "An interactive quiz game application with a lobby and leaderboard system. Hosts can create rooms and generate quizzes using Gemini, while players can join to compete in real-time.",
+  "requestFramePermissions": []
+}
