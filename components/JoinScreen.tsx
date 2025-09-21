@@ -42,11 +42,14 @@ const JoinScreen: React.FC<JoinScreenProps> = ({ joinRoom, goBack, initialRoomCo
         />
         <Input
           label="Room Code"
-          placeholder="Enter 6-digit code"
+          placeholder="123456"
           value={roomCode}
-          onChange={(e) => setRoomCode(e.target.value)}
+          onChange={(e) => {
+            const numericValue = e.target.value.replace(/[^0-9]/g, '');
+            setRoomCode(numericValue);
+          }}
           maxLength={6}
-          className="tracking-widest text-center"
+          className="text-3xl font-mono font-bold text-center tracking-[0.4em] bg-gray-800/60 p-3"
         />
       </div>
       <div className="flex justify-between mt-8">
